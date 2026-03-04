@@ -16,7 +16,7 @@ jobs:
               run: echo "hello from GitHub actions"
 
             - name: print the current date and time # to print current date and time
-              run: date "+%Y-%m-%d %H:%M:%S" # in proper format
+              run: date "+%Y-%m-%d %H:%M:%S" # in proper format 2026-03-04 11:13:05
 
             - name: print the branch name # to see triggered branch name
               run: | # using pipe to write multi line command
@@ -28,3 +28,6 @@ jobs:
             - name: the runner of the workflow
               run: |
                   echo "This workflow is running on: ${{ runner.os }}" # github variable to get the operating system of the runner
+
+            - name: Break the workflow
+              run: exit 1

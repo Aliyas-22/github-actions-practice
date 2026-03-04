@@ -29,5 +29,5 @@ jobs:
               run: |
                   echo "This workflow is running on: ${{ runner.os }}" # github variable to get the operating system of the runner
 
-            - name: Break the workflow
-              run: exit 1
+            # - name: Break the workflow
+            #   run: exit 1            # to break the workflow like exit 1 means fail and exit 0 means success

@@ -1,14 +1,30 @@
 ---
 name: hello
 on:
-    push:
+    push: # Trigger on push
         branches:
             - main
 jobs:
     greet:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-            - name: print hello
+        runs-on: ubuntu-latest # runner
+
+        steps: # steps to execute
+            - name: Checkout code # checkout the code from the repository
+              uses: actions/checkout@v2 # github action provide variable
+
+            - name: print hello # print hello message
               run: echo "hello from GitHub actions"
+
+            - name: print the current date and time # to print current date and time
+              run: date "+%Y-%m-%d %H:%M:%S" # in proper format
+
+            - name: print the branch name # to see triggered branch name
+              run: | # using pipe to write multi line command
+                  echo "Triggered by branch: ${{ github.ref_name }}"   # github variable to get branch name
+
+            - name: print the list of files in the repository # to see the files in the repository
+              run: ls -la # linux command to list files in long format
+
+            - name: the runner of the workflow
+              run: |
+                  echo "This workflow is running on: ${{ runner.os }}" # github variable to get the operating system of the runner

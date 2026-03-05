@@ -26,5 +26,8 @@ jobs:
               run: |
                   echo "Testing with OS: ${{ matrix.os }} and Python version: ${{ matrix.python-version }}" # Print the current OS and Python version from the matrix
 
+            - name: Force failure
+              run: exit 1
+
             - name: Print Python version
               run: python --version # Print the installed Python version

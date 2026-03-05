@@ -18,5 +18,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
+            - name: print python version from matrix
+              run: |
+                  echo "Testing with Python current version: ${{ matrix.python-version }}" # Print the current Python version from the matrix
+
             - name: Print Python version
               run: python --version # Print the installed Python version

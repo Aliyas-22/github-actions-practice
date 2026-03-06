@@ -37,8 +37,8 @@ jobs:
             - name: Print OS and runner info
               run: |
                   echo "Running on ${{runner.os}}"
-                  echo "Hostname: $HOSTNAME"
-                  echo "Current user: $USER"
+                  echo "Hostname: %COMPUTERNAME%"
+                  echo "Current user: %USERNAME%"
     check-macos:
         runs-on: macos-latest
 

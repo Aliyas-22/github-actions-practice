@@ -6,9 +6,8 @@
 
 name: version workflow
 on:
-    push:
-        branches:
-            - main
+    workflow_dispatch:
+      
 jobs:
     check-versions:
         runs-on: ubuntu-latest

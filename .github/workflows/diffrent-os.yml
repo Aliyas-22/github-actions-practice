@@ -10,9 +10,7 @@
 
 name: Different OS Workflow
 on:
-    push:
-        branches:
-            - main
+  workflow_dispatch: 
 jobs:
     check-ubuntu:
         runs-on: ubuntu-latest
